@@ -45,7 +45,7 @@ class BoardState:
         }
 
         self.current_turn = 1
-        self.turn_no = 0
+        self.turn_no = 1
         self.game_over = False
 
     def plot_board(self):
@@ -747,14 +747,13 @@ class BoardState:
 
         for comb in itertools.product(range(0, 8), repeat=8):
             moves = self.check_move(
-                self.board,
                 move_1=[[comb[0], comb[1]], [comb[2], comb[3]]],
                 move_2=[[comb[4], comb[5]], [comb[6], comb[7]]],
                 colour=colour,
             )
 
-        if moves:
-            possible_moves.append(moves)
+            if moves:
+                possible_moves.append(moves)
 
         return possible_moves
 
@@ -762,7 +761,9 @@ class BoardState:
         colour = 2  # White
         possible_moves = self.check_possible_moves(colour)
 
-        return possible_moves[rand.randint(0, len(possible_moves) - 1)]
+        self.current_turn = 1
+
+        return possible_moves[rand.randint(0, (len(possible_moves) - 1))]
 
     def check_win(self):
         for desc in self.board_descriptions.values():
