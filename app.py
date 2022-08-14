@@ -4,6 +4,7 @@ from flask import Flask, request, render_template
 
 board_state = BoardState()
 colours = {1: "Black", 2: "White"}
+multiplayer = False
 
 app = Flask(__name__)
 
@@ -23,8 +24,6 @@ def game():
     move_2_end = request.form.get("move_2_end")
 
     if request.method == "POST":
-        for row in board_state.board:
-            print(row)
         board_state.make_move(
             move_1=[
                 [int(x.strip()) for x in move_1_start.split(",")],
@@ -38,6 +37,12 @@ def game():
         )
 
         board_state.plot_board()
+
+        if not multiplayer:
+            random_move_1, random_move_2 = board_state.random_move()[0]
+            board_state.make_move(
+                random_move_1, random_move_2, colour=board_state.current_turn
+            )
 
     colour = colours[board_state.current_turn]
     turn_no = board_state.turn_no
