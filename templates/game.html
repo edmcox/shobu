@@ -1,0 +1,35 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+<body>
+    <h1>
+        SHOBU
+    </h1>
+    <h3>
+        Turn {{turn_no}}
+    </h3>
+    <h3>
+        {{colour}}'s Turn
+    </h3>
+
+    <div class="image-container">
+        <img src={{url}}>
+    </div>
+    </body>
+
+    <div class="form">
+        <form method="POST">
+            <div>
+                <input id="move_1_start" name="move_1_start" placeholder="Move 1 Start" required>
+
+                <input id="move_1_end" name="move_1_end" placeholder="Move 1 End" required>
+
+                <input id="move_2_start" name="move_2_start" placeholder="Move 2 Start" required>
+
+                <input id="move_2_end" name="move_2_end" placeholder="Move 2 End" required>
+
+                <input name="make_move" type="submit">
+            </div>
+        </form>
+    </div>
+</body>
