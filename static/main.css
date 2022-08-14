@@ -23,6 +23,18 @@ div.form {
     text-align: center;
 }
 
+div.button {
+    display: block;
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    width: auto;
+}
+
 form {
     display: inline-block;
     margin: 0 auto;
