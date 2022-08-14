@@ -437,8 +437,8 @@ class BoardState:
                                         self.turn_no += 1
 
                                         return
-        print("Illegal Move")
-        return "Illegal move"
+
+        return "Illegal Move"
 
     def check_move(self, move_1, move_2, colour):
 
@@ -761,9 +761,7 @@ class BoardState:
         colour = 2  # White
         possible_moves = self.check_possible_moves(colour)
 
-        self.current_turn = 1
-
-        return possible_moves[rand.randint(0, (len(possible_moves) - 1))]
+        return possible_moves[rand.randint(0, len(possible_moves) - 1)]
 
     def check_win(self):
         for desc in self.board_descriptions.values():
