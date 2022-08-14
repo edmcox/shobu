@@ -188,7 +188,7 @@ class BoardState:
                                 valid_passive = False
 
                                 # moved one space
-                                if move_1_x_dist == 1 or move_1_y_dist == 1:
+                                if abs(move_1_x_dist) == 1 or abs(move_1_y_dist) == 1:
                                     if self.board[move_1[1][0]][move_1[1][1]] == 0:
                                         valid_passive = True
 
@@ -211,7 +211,10 @@ class BoardState:
                                     valid_push = False
 
                                     # moved one space
-                                    if move_2_x_dist == 1 or move_2_y_dist == 1:
+                                    if (
+                                        abs(move_2_x_dist) == 1
+                                        or abs(move_2_y_dist) == 1
+                                    ):
                                         # no push
                                         if self.board[move_2[1][0]][move_2[1][1]] == 0:
                                             valid_push = True
