@@ -3,7 +3,6 @@ from flask import Flask, request, render_template
 
 board_state = BoardState()
 colours = {1: "Black", 2: "White"}
-multiplayer = False
 
 app = Flask(__name__)
 
@@ -42,7 +41,7 @@ def solo():
 
         board_state.check_win()
 
-        if not multiplayer and not board_state.game_over and not player_move:
+        if not board_state.game_over and not player_move:
             random_move_1, random_move_2 = board_state.random_move()
 
             board_state.make_move(
