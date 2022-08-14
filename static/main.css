@@ -1,0 +1,36 @@
+body {
+    margin: auto;
+    width: 640px;
+    padding: 50px;
+    font-family: 'Avenir', sans-serif;
+    color: #33475b;
+}
+
+h1 {
+    text-align: center;
+    margin: 0 auto;
+    width: 400px;
+}
+
+h3 {
+    text-align: center;
+    margin: 0 auto;
+    width: 400px;
+}
+
+div.form {
+    display: block;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
