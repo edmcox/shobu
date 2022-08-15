@@ -7,6 +7,8 @@ from matplotlib.colors import ListedColormap
 from matplotlib.patches import Circle
 import itertools
 import random as rand
+import os
+from os import path
 
 
 class BoardState:
@@ -76,6 +78,9 @@ class BoardState:
                 elif piece == 1:
                     circ = Circle((x, y), 0.3, facecolor="k")
                     ax.add_patch(circ)
+
+        if not os.path.exists("static/images"):
+            os.mkdir("static/images")
 
         plt.savefig("static/images/board.png", bbox_inches="tight")
 
