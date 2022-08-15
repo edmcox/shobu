@@ -1,2 +1,2 @@
 # shobu
-Python implementation of the board game Shobu.
+Python implementation of the board game Shobu .
