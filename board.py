@@ -777,5 +777,11 @@ class BoardState:
 
             if len(set(flat_board)) != 3:
                 self.game_over = True
+                
+                if self.current_turn == 1:
+                    self.current_turn = 2
+                else:
+                    self.current_turn = 1
+                self.turn_no -= 1
 
         return
